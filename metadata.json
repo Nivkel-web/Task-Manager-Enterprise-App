@@ -1,0 +1,6 @@
+{
+  "name": "TaskMatrix Enterprise",
+  "description": "Enterprise-grade responsive task dashboard featuring Angular-inspired reactive Signals state, inline double-click editing, and local persistent storage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
