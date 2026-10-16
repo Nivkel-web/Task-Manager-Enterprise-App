@@ -257,6 +257,7 @@ export const currentViewSignal = signal<ViewMode>('grid', { name: 'currentViewSi
 export const editingCellSignal = signal<EditableCell | null>(null, { name: 'editingCellSignal' });
 export const activeTaskIdSignal = signal<string | null>(null, { name: 'activeTaskIdSignal' });
 export const isNewTaskModalOpenSignal = signal<boolean>(false, { name: 'isNewTaskModalOpenSignal' });
+export const isTourOpenSignal = signal<boolean>(false, { name: 'isTourOpenSignal' });
 export const canUndoSignal = signal<boolean>(false, { name: 'canUndoSignal' });
 export const canRedoSignal = signal<boolean>(false, { name: 'canRedoSignal' });
 export const lastSavedTimestampSignal = signal<number>(Date.now(), { name: 'lastSavedTimestampSignal' });

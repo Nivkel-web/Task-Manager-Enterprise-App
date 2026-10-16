@@ -4,13 +4,14 @@ import { useSignal } from '../signals/core';
 import {
   currentViewSignal,
   isNewTaskModalOpenSignal,
+  isTourOpenSignal,
   canUndoSignal,
   canRedoSignal,
   undo,
   redo,
   lastSavedTimestampSignal,
 } from '../signals/taskStore';
-import { Plus, RotateCcw, RotateCw, Activity, LayoutGrid, Kanban, CalendarRange } from 'lucide-react';
+import { Plus, RotateCcw, RotateCw, Activity, LayoutGrid, Kanban, CalendarRange, Image as ImageIcon } from 'lucide-react';
 
 export const Header: React.FC = () => {
   const currentView = useSignal(currentViewSignal);
@@ -128,6 +129,16 @@ export const Header: React.FC = () => {
               <RotateCw className="w-3.5 h-3.5" />
             </button>
           </div>
+
+          <button
+            type="button"
+            onClick={() => isTourOpenSignal.set(true)}
+            title="View Screenshots & Visual Tour"
+            className="flex items-center gap-1 px-2.5 py-1.5 text-xs font-medium text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200/80 rounded-md transition-colors whitespace-nowrap shrink-0"
+          >
+            <ImageIcon className="w-3.5 h-3.5 text-slate-500" />
+            <span className="hidden sm:inline">Tour & Screenshots</span>
+          </button>
 
           <button
             type="button"

@@ -7,6 +7,7 @@ import {
   canUndoSignal,
   canRedoSignal,
   isNewTaskModalOpenSignal,
+  isTourOpenSignal,
   searchQuerySignal,
 } from './signals/taskStore';
 import { Header } from './components/Header';
@@ -18,10 +19,12 @@ import { TimelineView } from './components/TimelineView';
 import { SignalsInspector } from './components/SignalsInspector';
 import { TaskDetailsDrawer } from './components/TaskDetailsDrawer';
 import { NewTaskModal } from './components/NewTaskModal';
+import { VisualTourModal } from './components/VisualTourModal';
 import { ChevronRight, Cpu } from 'lucide-react';
 
 export default function App() {
   const currentView = useSignal(currentViewSignal);
+  const isTourOpen = useSignal(isTourOpenSignal);
 
   // Global Keyboard Shortcuts
   useEffect(() => {
@@ -95,6 +98,9 @@ export default function App() {
 
       {/* Create Task Modal */}
       <NewTaskModal />
+
+      {/* Visual Tour & Screenshots Modal */}
+      <VisualTourModal isOpen={isTourOpen} onClose={() => isTourOpenSignal.set(false)} />
 
       {/* Minimal Enterprise Footer (Clean unboxed metadata) */}
       <footer className="mt-auto border-t border-slate-200 bg-white py-3">
